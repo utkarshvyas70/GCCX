@@ -1,0 +1,117 @@
+:root {
+  --bg: #0f1115;
+  --card: #171a21;
+  --border: #2a2e38;
+  --text: #e6e8eb;
+  --muted: #9aa1ac;
+  --accent: #5b8def;
+  --green: #3ecf8e;
+  --red: #ef5b5b;
+  --amber: #e2b93b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar h1 { font-size: 20px; margin: 0; }
+.result-count { color: var(--muted); font-size: 13px; }
+
+main { padding: 20px 28px 60px; max-width: 900px; margin: 0 auto; }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+}
+
+#searchBox { flex: 1; min-width: 220px; }
+
+button { cursor: pointer; }
+button.secondary { background: #1e222b; }
+button:hover { border-color: var(--accent); }
+
+.candidate-list { display: flex; flex-direction: column; gap: 14px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-name { margin: 0; font-size: 16px; }
+.card-meta { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+
+.card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.pill {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.pill.shortlist { background: rgba(62,207,142,0.15); color: var(--green); }
+.pill.reject { background: rgba(239,91,91,0.15); color: var(--red); }
+.pill.followup { background: rgba(226,185,59,0.15); color: var(--amber); }
+
+.card-skills {
+  margin: 12px 0 4px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.card-notes { margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: var(--text); }
+
+.card-ai {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.ai-summary {
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+  min-height: 1em;
+}
+
+.card-actions { display: flex; gap: 8px; margin-top: 12px; }
+
+.tag-btn.active[data-tag="shortlist"] { border-color: var(--green); color: var(--green); }
+.tag-btn.active[data-tag="reject"] { border-color: var(--red); color: var(--red); }
+.tag-btn.active[data-tag="followup"] { border-color: var(--amber); color: var(--amber); }
+
+.empty-state { color: var(--muted); padding: 40px 0; text-align: center; }

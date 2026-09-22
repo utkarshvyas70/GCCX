@@ -1,0 +1,6 @@
+node_modules/
+backend/triage.db
+backend/triage.db-shm
+backend/triage.db-wal
+backend/.env
+.DS_Store

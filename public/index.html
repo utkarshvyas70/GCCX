@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Candidate Triage</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Candidate Triage</h1>
+    <span id="resultCount" class="result-count"></span>
+  </header>
+
+  <main>
+    <section class="filters">
+      <input id="searchBox" type="search" placeholder="Search name or notes..." />
+
+      <select id="roleFilter">
+        <option value="">All roles</option>
+      </select>
+
+      <select id="sourceFilter">
+        <option value="">All sources</option>
+      </select>
+
+      <select id="minExpFilter">
+        <option value="">Any experience</option>
+        <option value="1">1+ yrs</option>
+        <option value="3">3+ yrs</option>
+        <option value="5">5+ yrs</option>
+        <option value="7">7+ yrs</option>
+      </select>
+
+      <select id="tagFilter">
+        <option value="">All tags</option>
+        <option value="shortlist">Shortlisted only</option>
+        <option value="reject">Rejected only</option>
+        <option value="followup">Needs follow-up</option>
+      </select>
+
+      <button id="clearFilters" class="secondary">Clear</button>
+    </section>
+
+    <section id="list" class="candidate-list"></section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h2 class="card-name"></h2>
+          <p class="card-meta"></p>
+        </div>
+        <div class="card-tags"></div>
+      </div>
+
+      <p class="card-skills"></p>
+      <p class="card-notes"></p>
+
+      <div class="card-ai">
+        <button class="ai-btn secondary">✨ Generate fit summary</button>
+        <p class="ai-summary"></p>
+      </div>
+
+      <div class="card-actions">
+        <button class="tag-btn" data-tag="shortlist">☆ Shortlist</button>
+        <button class="tag-btn" data-tag="followup">⏳ Follow up</button>
+        <button class="tag-btn" data-tag="reject">✕ Reject</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
